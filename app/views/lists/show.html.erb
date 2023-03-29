@@ -1,0 +1,11 @@
+<%= link_to "retour", lists_path, class:"btn btn-primary" %>
+<h1>More details about your lists</h1>
+  <%= @list.name %>
+  <% @bookmarks.each do |bookmark|%>
+    <%= link_to "delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "are you sure"}%>
+    <%= link_to "edit", edit_bookmark_path(bookmark) %>
+    <%= bookmark.movie.title %>
+    <%= bookmark.movie.description%>
+    <%= bookmark.comment %>
+  <% end %>
+  <%= link_to "add a new bookmark", new_list_bookmark_path(@list) %>

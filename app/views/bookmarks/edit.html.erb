@@ -1,0 +1,6 @@
+<div class="form-input">
+    <%= simple_form_for @bookmark do |f| %>
+        <%= f.input :comment, html5: true, label: "Comment" %>
+        <%= f.submit "Update", class:"btn btn-primary" %>
+    <% end %>
+  </div>
